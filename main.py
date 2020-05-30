@@ -14,8 +14,6 @@ files = os.listdir('/home/flyboypk/Downloads')
 
 CreateIfNotExist('Images')
 CreateIfNotExist('Docs')
-CreateIfNotExist('Media')
-CreateIfNotExist('Others')
 
 imgExists = [".png",".jpg",".jpeg"]
 images = [file for file in files if os.path.splitext(file)[1].lower() in imgExists ]
