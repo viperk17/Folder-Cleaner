@@ -9,31 +9,33 @@ def movefiles(foldername, file):
     for file in files:
         os.replace(file, f"{foldername}/{file}")    # to move files to folders
 
-files = os.listdir('/home/flyboypk/Downloads')
-# files.remove("main.py")
+        
+if __name__ == "__main__":
+    files = os.listdir('/home/flyboypk/Downloads/')
+    # files.remove("main.py")
 
-CreateIfNotExist('Images')
-CreateIfNotExist('Docs')
-CreateIfNotExist('Media')
-CreateIfNotExist('Others')
+    CreateIfNotExist('Images')
+    CreateIfNotExist('Docs')
+    CreateIfNotExist('Media')
+    CreateIfNotExist('Others')
 
 
-imgExists = [".png",".jpg",".jpeg"]
-images = [file for file in files if os.path.splitext(file)[1].lower() in imgExists ]
+    imgExists = [".png",".jpg",".jpeg"]
+    images = [file for file in files if os.path.splitext(file)[1].lower() in imgExists ]
 
-docExists = [".txt",".docx",".doc",".pdf",".xls",".xlsx"]
-docs = [file for file in files if os.path.splitext(file)[1].lower() in docExists ]
+    docExists = [".txt",".docx",".doc",".pdf",".xls",".xlsx"]
+    docs = [file for file in files if os.path.splitext(file)[1].lower() in docExists ]
 
-mediaExists = [".mp3",".mp4",".mkv",".flv"]
-medias = [file for file in files if os.path.splitext(file)[1].lower() in mediaExists ]
+    mediaExists = [".mp3",".mp4",".mkv",".flv"]
+    medias = [file for file in files if os.path.splitext(file)[1].lower() in mediaExists ]
 
-others = []
-    for file in files:
-        exists = os.path.splitext(file)[1].lower()
-        if (exists not in mediaExists) and (exists not in docExists) and (exists not in imgExists) and os.path.isfile(file):
-            others.append(file)
+    others = []
+        for file in files:
+            exists = os.path.splitext(file)[1].lower()
+            if (exists not in mediaExists) and (exists not in docExists) and (exists not in imgExists) and os.path.isfile(file):
+                others.append(file)
 
-movefiles("Images", images)
-movefiles("Docs", docs)
-movefiles("Media", medias)
-movefiles("Others", others)
+    movefiles("Images", images)
+    movefiles("Docs", docs)
+    movefiles("Media", medias)
+    movefiles("Others", others)
