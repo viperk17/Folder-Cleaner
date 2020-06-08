@@ -35,6 +35,7 @@ if __name__ == "__main__":
         if (exists not in mediaExists) and (exists not in docExists) and (exists not in imgExists) and os.path.isfile(file):
             others.append(file)
 
+            
     movefiles("Images", images)
     movefiles("Docs", docs)
     movefiles("Media", medias)
