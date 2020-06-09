@@ -11,7 +11,6 @@ def movefiles(foldername, files):
 
 
 if __name__ == "__main__":
-
     files = os.listdir('/home/flyboypk/PycharmProjects/FolderCleaner/')
     files.remove("main.py")
 
